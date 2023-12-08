@@ -1,0 +1,32 @@
+body {
+    background:url("Untitled.png") ;
+    background-size:cover ; 
+    zoom: 90%;
+}
+.button button{
+    margin-left: 200px;
+    width: 600px;
+    height: 300px;
+    color: rgb(6, 2, 2);
+    background: #9741ff;
+    margin-top: 1700px;
+    border-radius: 10px;
+    font-size: 50px;
+    font-weight: 1000;
+    cursor: pointer;
+}
+.button2 button{
+    margin-left: 150px;
+    width: 600px;
+    height: 300px;
+    color: rgb(6, 2, 2);
+    background: #9741ff;
+    margin-top: 1700px;
+    border-radius: 10px;
+    font-size: 50px;
+    font-weight: 1000;
+    cursor: pointer;
+}
+.lol{
+    display: flex;
+}

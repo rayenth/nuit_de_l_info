@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      background:url("website-background-templates.png") ;
+      background-size:cover ; 
+      font-size: xx-large;
+      color: rgb(255, 255, 255);
+
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .option {
+      margin: 0 10px;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="question" id="question1">
+      <p>1/Question: What is the primary greenhouse gas responsible for global warming?</p>
+      <div class="options">
+        <div class="option"><input type="radio" name="q1" value="Paris"> a.Oxygen</div>
+        <div class="option"><input type="radio" name="q1" value="Berlin"> b.Carbon Dioxide (CO2)</div>
+        <div class="option"><input type="radio" name="q1" value="London"> c.Nitrogen</div>
+        <div class="option"><input type="radio" name="q1" value="London"> d.Hydrogen</div>
+      </div>
+    </div>
+
+    <div class="question" id="question2">
+      <p>2/Question: Which of the following human activities contributes significantly to the increase in greenhouse gas emissions??</p>
+      <div class="options">
+        <div class="option"><input type="radio" name="q2" value="Mars"> a.Planting trees
+        </div>
+        <div class="option"><input type="radio" name="q2" value="Venus"> b.Burning fossil fuels</div>
+        <div class="option"><input type="radio" name="q2" value="Jupiter"> c.Recycling plastic</div>
+      </div>
+    </div>
+
+    <div class="question" id="question3">
+      <p>3/Question: What is the main source of methane emissions contributing to global warming?</p>
+      <div class="options">
+        <div class="option"><input type="radio" name="q3" value="Elephant"> a.Ocean currents</div>
+        <div class="option"><input type="radio" name="q3" value="Blue Whale"> b.Livestock digestion</div>
+        <div class="option"><input type="radio" name="q3" value="Giraffe"> c.Solar power plants</div>
+      </div>
+    </div>
+
+    <button onclick="submitQuiz()">Submit Quiz</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      const answers = {
+        q1: 'Carbon Dioxide (CO2)',
+        q2: 'Burning fossil fuels',
+        q3: 'Livestock digestion'
+      };
+
+      let score = 0;
+
+      for (const question in answers) {
+        const selectedOption = document.querySelector(`input[name=${question}]:checked`);
+        if (selectedOption) {
+          const selectedAnswer = selectedOption.value;
+          if (selectedAnswer === answers[question]) {
+            score++;
+          }
+        }
+      }
+
+      const resultElement = document.getElementById('result');
+      resultElement.textContent = `Your score: ${score} out of ${Object.keys(answers).length}`;
+    }
+  </script>
+</body>
+</html>
